@@ -1,0 +1,390 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Hannah · Applied AI Engineer</title>
+<meta name="description" content="Applied AI engineer & product builder. I ship agents, full-stack SaaS, and tools people actually use." />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600;9..144,700&family=Inter:wght@400;500;600&family=Noto+Sans+SC:wght@400;500;600&display=swap" rel="stylesheet" />
+<style>
+  :root{
+    --bg:#FAF7F2; --card:#FFFFFF; --ink:#211D18; --muted:#6B6258;
+    --accent:#C2613B; --accent-soft:#F4E3D8; --sage:#7C8B6F;
+    --line:rgba(33,29,24,.10); --shadow:0 1px 2px rgba(33,29,24,.04),0 12px 32px rgba(33,29,24,.06);
+    --radius:18px;
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  html{scroll-behavior:smooth}
+  body{
+    background:var(--bg); color:var(--ink);
+    font-family:"Inter","Noto Sans SC",system-ui,-apple-system,"Segoe UI",sans-serif;
+    line-height:1.6; -webkit-font-smoothing:antialiased; overflow-x:hidden;
+  }
+  h1,h2,h3{font-family:"Fraunces","Noto Sans SC",Georgia,serif; font-weight:600; line-height:1.1; letter-spacing:-.01em}
+  a{color:inherit; text-decoration:none}
+  .wrap{max-width:1040px; margin:0 auto; padding:0 24px}
+  .accent{color:var(--accent)}
+
+  /* nav */
+  nav{position:sticky; top:0; z-index:50; backdrop-filter:blur(10px);
+    background:rgba(250,247,242,.78); border-bottom:1px solid var(--line)}
+  nav .wrap{display:flex; align-items:center; justify-content:space-between; height:64px}
+  nav .brand{font-family:"Fraunces",serif; font-weight:600; font-size:18px}
+  nav .links{display:flex; gap:22px; align-items:center}
+  nav .links a{font-size:14.5px; color:var(--muted); transition:color .2s}
+  nav .links a:hover{color:var(--ink)}
+  nav .links .cta{color:var(--accent); font-weight:500}
+  .lang-toggle{font-family:inherit; font-size:13px; font-weight:500; color:var(--muted);
+    background:var(--card); border:1px solid var(--line); padding:6px 13px; border-radius:999px;
+    cursor:pointer; transition:color .2s,border-color .2s; box-shadow:var(--shadow)}
+  .lang-toggle:hover{color:var(--ink); border-color:var(--accent)}
+  @media(max-width:640px){ nav .links a:not(.cta){display:none} nav .links{gap:14px} }
+
+  /* hero */
+  header.hero{position:relative; padding:96px 0 64px; overflow:hidden}
+  .blob{position:absolute; border-radius:50%; filter:blur(70px); opacity:.55; z-index:0}
+  .blob.b1{width:420px;height:420px;background:#F3D2BE;top:-120px;right:-80px}
+  .blob.b2{width:360px;height:360px;background:#D9E1CE;bottom:-160px;left:-120px;opacity:.5}
+  .hero .wrap{position:relative; z-index:1}
+  .eyebrow{display:inline-flex; align-items:center; gap:8px; font-size:13px; color:var(--muted);
+    background:var(--card); border:1px solid var(--line); padding:6px 14px; border-radius:999px; box-shadow:var(--shadow)}
+  .dot{width:8px;height:8px;border-radius:50%;background:var(--sage);box-shadow:0 0 0 4px rgba(124,139,111,.18);flex:none}
+  .hero h1{font-size:clamp(38px,6vw,66px); margin:22px 0 0; max-width:14ch}
+  .hero .lede{font-size:clamp(17px,2.2vw,21px); color:var(--muted); margin-top:20px; max-width:54ch}
+  .hero .actions{display:flex; flex-wrap:wrap; gap:14px; margin-top:34px}
+  .btn{display:inline-flex; align-items:center; gap:8px; padding:13px 22px; border-radius:999px;
+    font-size:15px; font-weight:500; transition:transform .15s, box-shadow .2s, background .2s}
+  .btn-primary{background:var(--accent); color:#fff; box-shadow:0 8px 22px rgba(194,97,59,.28)}
+  .btn-primary:hover{transform:translateY(-2px)}
+  .btn-ghost{background:var(--card); border:1px solid var(--line); box-shadow:var(--shadow)}
+  .btn-ghost:hover{transform:translateY(-2px)}
+
+  /* proof strip */
+  .proof{border-top:1px solid var(--line); border-bottom:1px solid var(--line); background:rgba(255,255,255,.5)}
+  .proof .wrap{display:flex; flex-wrap:wrap; gap:36px 56px; padding:30px 24px}
+  .proof .stat .n{font-family:"Fraunces",serif; font-size:30px; font-weight:600}
+  .proof .stat .l{font-size:13.5px; color:var(--muted)}
+
+  /* sections */
+  section{padding:78px 0}
+  .sec-head{display:flex; align-items:baseline; gap:14px; margin-bottom:34px}
+  .sec-head h2{font-size:clamp(26px,3.4vw,36px)}
+  .sec-head .idx{font-size:13px; color:var(--accent); font-weight:600; letter-spacing:.12em; text-transform:uppercase}
+
+  /* featured grid */
+  .grid{display:grid; grid-template-columns:1fr 1fr; gap:22px}
+  @media(max-width:760px){ .grid{grid-template-columns:1fr} }
+  .card{background:var(--card); border:1px solid var(--line); border-radius:var(--radius);
+    padding:28px; box-shadow:var(--shadow); transition:transform .18s, box-shadow .22s; display:flex; flex-direction:column}
+  .card:hover{transform:translateY(-4px); box-shadow:0 4px 8px rgba(33,29,24,.05),0 22px 48px rgba(33,29,24,.10)}
+  .card .kicker{font-size:12.5px; color:var(--accent); font-weight:600; letter-spacing:.04em; text-transform:uppercase}
+  .card h3{font-size:23px; margin:10px 0 0}
+  .card p{color:var(--muted); font-size:15px; margin-top:10px}
+  .chips{display:flex; flex-wrap:wrap; gap:8px; margin-top:18px}
+  .chip{font-size:12.5px; color:var(--ink); background:var(--accent-soft); padding:5px 11px; border-radius:8px}
+  .card .links{display:flex; gap:10px; margin-top:auto; padding-top:20px}
+  .pill{font-size:13.5px; font-weight:500; padding:8px 14px; border-radius:10px; display:inline-flex; align-items:center; gap:6px; transition:background .2s,border-color .2s}
+  .pill-go{background:var(--ink); color:var(--bg)}
+  .pill-go:hover{background:#000}
+  /* dashed pill = you still need to fill this link in */
+  .pill-todo{background:transparent; border:1.5px dashed var(--accent); color:var(--accent)}
+  .pill-todo:hover{background:var(--accent-soft)}
+
+  /* also built */
+  .mini{display:grid; grid-template-columns:repeat(3,1fr); gap:16px}
+  @media(max-width:760px){ .mini{grid-template-columns:1fr} }
+  .mini .item{background:transparent; border:1px solid var(--line); border-radius:14px; padding:18px 20px; transition:background .2s}
+  .mini .item:hover{background:var(--card)}
+  .mini .item .t{font-weight:600; font-size:15.5px}
+  .mini .item .d{font-size:13.5px; color:var(--muted); margin-top:4px}
+
+  /* about */
+  .about{display:grid; grid-template-columns:1fr 1.4fr; gap:48px; align-items:start}
+  @media(max-width:760px){ .about{grid-template-columns:1fr; gap:24px} }
+  .about p{font-size:17px; margin-bottom:16px}
+  .about p.big{font-family:"Fraunces","Noto Sans SC",serif; font-size:24px; color:var(--ink); line-height:1.4}
+  .seeking{background:var(--card); border:1px solid var(--line); border-radius:var(--radius); padding:24px; box-shadow:var(--shadow)}
+  .seeking .label{font-size:12.5px; color:var(--accent); font-weight:600; letter-spacing:.1em; text-transform:uppercase}
+  .seeking p{font-size:15.5px; color:var(--muted); margin-top:10px}
+
+  /* contact */
+  .contact{text-align:center; padding:90px 0}
+  .contact h2{font-size:clamp(30px,5vw,52px); max-width:18ch; margin:0 auto}
+  .contact p{color:var(--muted); margin:18px auto 30px; max-width:46ch}
+  .copy{cursor:pointer}
+
+  footer{border-top:1px solid var(--line); padding:30px 0; font-size:13.5px; color:var(--muted)}
+  footer .wrap{display:flex; flex-wrap:wrap; gap:10px; justify-content:space-between; align-items:center}
+
+  /* reveal */
+  .reveal{opacity:0; transform:translateY(18px); transition:opacity .6s ease, transform .6s ease}
+  .reveal.in{opacity:1; transform:none}
+</style>
+</head>
+<body>
+
+<!-- ============ NAV ============ -->
+<nav>
+  <div class="wrap">
+    <a href="#top" class="brand">Hannah</a>
+    <div class="links">
+      <a href="#work" data-zh="作品">Work</a>
+      <a href="#about" data-zh="关于">About</a>
+      <a href="#contact" data-zh="联系">Contact</a>
+      <button id="langToggle" class="lang-toggle" type="button">中文</button>
+      <!-- TODO: 换成你的 GitHub 用户名链接 -->
+      <a href="https://github.com/hannahlovegood" class="cta" target="_blank" rel="noopener">GitHub ↗</a>
+    </div>
+  </div>
+</nav>
+
+<!-- ============ HERO ============ -->
+<header class="hero" id="top">
+  <div class="blob b1"></div>
+  <div class="blob b2"></div>
+  <div class="wrap">
+    <span class="eyebrow"><span class="dot"></span> <span data-zh="正在找应用型 AI 岗位 · 远程 / 出海团队">Open to applied-AI roles · 远程 / 出海团队</span></span>
+    <h1 data-html data-zh="我做 <span class=&quot;accent&quot;>AI 产品</span>——而且真的把它们发布出去。">I build <span class="accent">AI products</span> — and I actually ship them.</h1>
+    <p class="lede" data-zh="应用型 AI 工程师 / 产品构建者。过去一年我独立发布了 10+ 个产品——从 agentic LLM 后端,到全栈 SaaS,再到真有人用的小工具。做真实的东西时,我跑得最快。">Applied AI engineer & product builder. Over the last year I've shipped 10+ products solo — from agentic LLM backends to full-stack SaaS to tools real people use. I move fastest when I'm making something real.</p>
+    <div class="actions">
+      <a href="#work" class="btn btn-primary" data-zh="看作品 ↓">See the work ↓</a>
+      <!-- TODO: 确认这是你常用邮箱 -->
+      <a href="mailto:ningtiaolovegood@gmail.com" class="btn btn-ghost" data-zh="✉ 联系我">✉ Get in touch</a>
+    </div>
+  </div>
+</header>
+
+<!-- ============ PROOF ============ -->
+<div class="proof">
+  <div class="wrap">
+    <div class="stat"><div class="n">10+</div><div class="l" data-zh="独立发布的产品">products shipped solo</div></div>
+    <div class="stat"><div class="n" data-zh="智能体">Agentic</div><div class="l" data-zh="LLM 后端与工具">LLM backends &amp; tools</div></div>
+    <div class="stat"><div class="n" data-zh="全栈">Full-stack</div><div class="l" data-zh="SaaS · 桌面 · Web">SaaS · desktop · web</div></div>
+    <div class="stat"><div class="n" data-zh="自学">Self-taught</div><div class="l" data-zh="作品胜过文凭">proof over diplomas</div></div>
+  </div>
+</div>
+
+<!-- ============ WORK ============ -->
+<section id="work">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <span class="idx" data-zh="01 — 精选作品">01 — Selected work</span>
+    </div>
+    <div class="sec-head reveal"><h2 data-zh="我亲手设计、构建并发布的东西。">Things I designed, built, and shipped.</h2></div>
+
+    <div class="grid">
+
+      <!-- TraceRAG — LIVE, real clickable links -->
+      <article class="card reveal">
+        <span class="kicker" data-zh="RAG / 检索增强 · 单文件 Web · 已上线">RAG / retrieval · Single-file web · Live</span>
+        <h3 data-zh="溯源 TraceRAG — 会给答案标来源的 PDF 问答">TraceRAG — PDF Q&amp;A that cites its sources</h3>
+        <p data-zh="上传 PDF、提问,得到带可点击引用的答案——每条结论都能跳回它依据的原文片段。我把 Open WebUI 的 RAG 内核抽成了一个零后端的单文件:浏览器内用 pdf.js 解析与切块,无 Key 时走中英文 BM25 检索,接入 Key 后升级为向量检索 + 模型流式生成带 [1][2] 引用。BYOK,纯静态托管。">Upload a PDF, ask, and get answers with clickable citations — every claim traces back to the exact passage it came from. I distilled Open WebUI's RAG core into one zero-backend file: in-browser pdf.js parsing &amp; chunking, BM25 keyword retrieval with no key, upgrading to vector search + streamed LLM answers with [1][2] citations once a key is added. BYOK, fully static.</p>
+        <div class="chips">
+          <span class="chip" data-zh="RAG / 检索">RAG / retrieval</span><span class="chip">pdf.js</span>
+          <span class="chip">BM25</span><span class="chip" data-zh="向量检索">Embeddings</span><span class="chip" data-zh="已上线 ↗">Live ↗</span>
+        </div>
+        <div class="links">
+          <a class="pill pill-go" href="https://hannahlovegood.github.io/trace-rag/" target="_blank" rel="noopener" data-zh="▶ 在线 Demo">▶ Live demo</a>
+          <a class="pill pill-go" href="https://github.com/hannahlovegood/trace-rag" target="_blank" rel="noopener" data-zh="⌥ 代码">⌥ Code</a>
+        </div>
+      </article>
+
+      <!-- Hermes -->
+      <article class="card reveal">
+        <span class="kicker" data-zh="智能体 AI · Python / FastAPI">Agentic AI · Python / FastAPI</span>
+        <h3 data-zh="Hermes — 股票投研智能体">Hermes — equity-research agent</h3>
+        <p data-zh="一个 LLM 智能体:拉取 A 股实时行情,用 Claude 推理,产出投研结论。FastAPI 后端 + akshare 数据层;我绕开了上游一个坏掉的代理,并加了磁盘缓存的代码表,让它又快又稳。">An LLM agent that pulls live A-share market data and reasons over it with Claude to produce investment research. FastAPI backend + akshare data layer; I engineered around a broken upstream proxy and added a disk-cached symbol table to keep it fast and reliable.</p>
+        <div class="chips">
+          <span class="chip">Python</span><span class="chip">FastAPI</span>
+          <span class="chip">Claude API</span><span class="chip" data-zh="工具调用 / 智能体">Tool-use / agent</span><span class="chip">akshare</span>
+        </div>
+        <div class="links">
+          <a class="pill pill-todo" href="#" target="_blank" data-zh="▶ 在线 Demo">▶ Live demo</a>
+          <a class="pill pill-todo" href="#" target="_blank" data-zh="📹 录屏讲解">📹 Walkthrough</a>
+        </div>
+      </article>
+
+      <!-- HookForge -->
+      <article class="card reveal">
+        <span class="kicker" data-zh="AI 工具 · 商业化">AI tooling · Go-to-market</span>
+        <h3 data-zh="HookForge — AI 短剧出海工具">HookForge — AI short-drama toolkit</h3>
+        <p data-zh="为爆火的 AI 短剧出海&quot;卖铲子&quot;的工具——帮创作者把短剧本地化、做成面向海外市场的成片。我选定的首个盈利项目:先用 service-first 验证,再做成软件。">"Sell shovels" tooling for the booming AI short-drama (短剧) export wave — helping creators localize and produce dramas for overseas markets. My chosen first revenue project: validated service-first before turning it into software.</p>
+        <div class="chips">
+          <span class="chip" data-zh="LLM 流水线">LLM pipeline</span><span class="chip" data-zh="内容生成">Content gen</span>
+          <span class="chip" data-zh="产品">Product</span><span class="chip" data-zh="出海 / 本地化">出海 / localization</span>
+        </div>
+        <div class="links">
+          <a class="pill pill-todo" href="#" target="_blank" data-zh="▶ 在线 Demo">▶ Live demo</a>
+          <a class="pill pill-todo" href="#" target="_blank" data-zh="📄 案例">📄 Case study</a>
+        </div>
+      </article>
+
+      <!-- Synora -->
+      <article class="card reveal">
+        <span class="kicker" data-zh="AI 产品设计 · Web">AI product design · Web</span>
+        <h3 data-zh="Synora — 神经多元人群社交应用">Synora — social app for neurodivergent people</h3>
+        <p data-zh="一款围绕神经多元需求设计的社交平台:每日&quot;今日遇见&quot;匹配、内嵌 AI 教练(萤),以及三层信任准入。端到端的产品 + UX,已做成可交互原型上线。">A social platform designed around neurodivergent needs: a daily "今日遇见" match, an embedded AI coach (萤), and a three-tier trust onboarding. End-to-end product + UX, shipped as a working interactive prototype.</p>
+        <div class="chips">
+          <span class="chip" data-zh="产品 / UX">Product / UX</span><span class="chip" data-zh="AI 教练">AI coach</span>
+          <span class="chip" data-zh="原型">Prototype</span><span class="chip">HTML / JS</span>
+        </div>
+        <div class="links">
+          <a class="pill pill-todo" href="#" target="_blank" data-zh="▶ 在线 Demo">▶ Live demo</a>
+          <a class="pill pill-todo" href="#" target="_blank" data-zh="📄 说明">📄 Write-up</a>
+        </div>
+      </article>
+
+      <!-- Curio -->
+      <article class="card reveal">
+        <span class="kicker" data-zh="全栈 SaaS · TypeScript">Full-stack SaaS · TypeScript</span>
+        <h3 data-zh="Curio — 酒店点评 SaaS">Curio — hotel-review SaaS</h3>
+        <p data-zh="基于现代 TypeScript 技术栈构建的全栈 SaaS——认证、支付、多租户底座,该有的&quot;无聊但必要&quot;的地基全都有。证明我能把一个产品从想法做到真正可部署的应用。">A full-stack SaaS built on a modern TypeScript stack — auth, payments, multi-tenant plumbing, the whole boring-but-necessary foundation. Proof I can take a product from idea to a real, deployable application.</p>
+        <div class="chips">
+          <span class="chip">Next.js</span><span class="chip">TypeScript</span>
+          <span class="chip">SaaS</span><span class="chip" data-zh="认证 / 计费">Auth / billing</span>
+        </div>
+        <div class="links">
+          <a class="pill pill-todo" href="#" target="_blank" data-zh="▶ 在线 Demo">▶ Live demo</a>
+          <a class="pill pill-todo" href="#" target="_blank" data-zh="⌥ 代码">⌥ Code</a>
+        </div>
+      </article>
+
+      <!-- 24-Hour Life Dial — LIVE, real clickable links -->
+      <article class="card reveal">
+        <span class="kicker" data-zh="在线工具 · 单文件 Web · 已上线">Live tool · Single-file web</span>
+        <h3 data-zh="24 小时人生拨盘 — 拖拽规划你的一天">24-Hour Life Dial — drag to plan your day</h3>
+        <p data-zh="在一条 24 小时线性时间轴上拖拽,把一天刷成睡眠 / 工作 / 娱乐 / 学习,并自动生成当日复盘——一个会提示睡眠不足、过劳与失衡的启发式引擎。单文件、离线、零依赖。我逆向了 Linear Clock Lab 的核心,再亲手补上它从未有过的拖拽分配与复盘。打开即玩。">Drag across a linear 24-hour timeline to paint your day into sleep / work / play / study, and it auto-writes a daily review — a heuristic engine that flags short sleep, overwork, and imbalance. Single-file, offline, zero dependencies. I reverse-engineered the core of Linear Clock Lab, then built the drag-allocation and review it never had. Open it and play.</p>
+        <div class="chips">
+          <span class="chip">HTML / CSS / JS</span><span class="chip">Pointer Events</span>
+          <span class="chip" data-zh="启发式引擎">Heuristic engine</span><span class="chip" data-zh="零依赖">Zero-dependency</span><span class="chip" data-zh="已上线 ↗">Live ↗</span>
+        </div>
+        <div class="links">
+          <a class="pill pill-go" href="https://hannahlovegood.github.io/life-dial/" target="_blank" rel="noopener" data-zh="▶ 在线 Demo">▶ Live demo</a>
+          <a class="pill pill-go" href="https://github.com/hannahlovegood/life-dial" target="_blank" rel="noopener" data-zh="⌥ 代码">⌥ Code</a>
+        </div>
+      </article>
+
+      <!-- E-Ink Calendar — LIVE, real clickable links -->
+      <article class="card reveal">
+        <span class="kicker" data-zh="在线工具 · 单文件 Web · 已上线">Live tool · Single-file web</span>
+        <h3 data-zh="墨水屏日历牌 — 浏览器里的电子墨水日历">E-Ink Calendar — an e-paper desk display in your browser</h3>
+        <p data-zh="一块 ESP32 + LilyGo 电子墨水屏日历牌的浏览器模拟器:大日期、迷你月历、今日待办、实时天气(Open-Meteo,免 Key),每 30 分钟刷新并在夜间自动进入低功耗——连电子墨水的&quot;黑闪&quot;刷新都还原了。原项目要 $70 硬件加一台常开的 Home Assistant 才能看到画面;我把它的核心体验抽出来搬进单文件、零后端的网页,买板子前先所见即所得。">A browser simulator of an ESP32 + LilyGo e-paper calendar display: a big date, a mini month grid, today's to-dos, and live weather (Open-Meteo, no key), refreshing every 30 minutes and dropping into low-power mode at night — down to the e-ink "black flash" repaint. The original needs $70 of hardware and an always-on Home Assistant to render anything; I distilled its core experience into one zero-backend file you can see before buying the board.</p>
+        <div class="chips">
+          <span class="chip">HTML / CSS / JS</span><span class="chip" data-zh="电子墨水 UI">E-ink UI</span>
+          <span class="chip" data-zh="天气 API">Weather API</span><span class="chip" data-zh="零依赖">Zero-dependency</span><span class="chip" data-zh="已上线 ↗">Live ↗</span>
+        </div>
+        <div class="links">
+          <a class="pill pill-go" href="https://hannahlovegood.github.io/eink-calendar/" target="_blank" rel="noopener" data-zh="▶ 在线 Demo">▶ Live demo</a>
+          <a class="pill pill-go" href="https://github.com/hannahlovegood/eink-calendar" target="_blank" rel="noopener" data-zh="⌥ 代码">⌥ Code</a>
+        </div>
+      </article>
+
+    </div>
+  </div>
+</section>
+
+<!-- ============ ALSO BUILT ============ -->
+<section id="more" style="padding-top:0">
+  <div class="wrap">
+    <div class="sec-head reveal"><span class="idx" data-zh="02 — 广度">02 — Range</span></div>
+    <div class="sec-head reveal"><h2 data-zh="还有很多——因为我就是喜欢做东西。">And a lot more, because I like making things.</h2></div>
+    <div class="mini">
+      <a class="item reveal" href="#"><div class="t" data-zh="全球黑客松地图 →">Hackathon Atlas →</div><div class="d" data-zh="世界黑客松地图——Leaflet、聚合、多维筛选。">Global hackathon map — Leaflet, clustering, multi-filter.</div></a>
+      <a class="item reveal" href="#"><div class="t" data-zh="桌宠小黑猫 →">desktop-cat 小黑猫 →</div><div class="d" data-zh="macOS 上的 Electron 桌面宠物伴侣。">An Electron desktop-pet companion for macOS.</div></a>
+      <a class="item reveal" href="#"><div class="t" data-zh="拉威尔打字钢琴 →">Ravel Typewriter →</div><div class="d" data-zh="打字即奏拉威尔——单文件音乐小玩具。">Type and it plays Ravel — a single-file musical toy.</div></a>
+      <a class="item reveal" href="#"><div class="t" data-zh="人生方向罗盘 →">人生方向罗盘 →</div><div class="d" data-zh="离线决策罗盘,给出温柔的结构化建议。">An offline decision compass with gentle structured advice.</div></a>
+      <a class="item reveal" href="#"><div class="t" data-zh="AuDHD 叙事游戏 →">AuDHD narrative game →</div><div class="d" data-zh="社会模型视角、写实的成长选择故事。">A social-model, realistic coming-of-age choice story.</div></a>
+      <a class="item reveal" href="#"><div class="t" data-zh="Minotoys →">Minotoys →</div><div class="d" data-zh="AI 视频教育毛绒玩具概念(团队项目)。">AI-video educational plush concept (team project).</div></a>
+    </div>
+  </div>
+</section>
+
+<!-- ============ ABOUT ============ -->
+<section id="about" style="background:rgba(255,255,255,.45); border-top:1px solid var(--line); border-bottom:1px solid var(--line)">
+  <div class="wrap">
+    <div class="sec-head reveal"><span class="idx" data-zh="03 — 关于">03 — About</span></div>
+    <div class="about">
+      <div class="reveal">
+        <p class="big" data-zh="我首先是个 builder。我的最高档,是动手做出真实的东西。">I'm a builder first. My fastest gear is making something real.</p>
+      </div>
+      <div class="reveal">
+        <p data-zh="我的背景是中文,不是计算机——所以我自学着把东西发出去。成果就是上面这些:agentic LLM 后端、全栈 SaaS、桌面应用、互动叙事。我在动手中学习,而且做得很多。">My background is in Chinese literature, not computer science — so I taught myself to ship. The result is the work above: agentic LLM backends, full-stack SaaS, desktop apps, interactive fiction. I learn by building, and I build a lot.</p>
+        <p data-zh="我在意的是真正触达用户的产品,而不是烂在文件夹里的 demo。我能端到端地负责一个功能——从 LLM prompt、API,到用户点击的那一层界面。">I care about products that actually reach people, not demos that die in a folder. I'm comfortable owning a feature end-to-end — from the LLM prompt and the API to the UI someone clicks.</p>
+        <div class="seeking" style="margin-top:8px">
+          <div class="label" data-zh="我在找什么">What I'm looking for</div>
+          <p data-zh="一个面向全球市场(出海)团队的应用型 AI 工程岗——在那里,能发布产品、产品 sense、快速学习,比一纸文凭更重要。可远程。">An applied-AI engineering role on a team building for global markets (出海) — where shipping, product sense, and learning fast matter more than a diploma. Remote-friendly.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ CONTACT ============ -->
+<section class="contact" id="contact">
+  <div class="wrap">
+    <div class="reveal">
+      <h2 data-zh="一起做点能真正落地发布的东西吧。">Let's build something that ships.</h2>
+      <p data-zh="如果你在招应用型 AI 的人,想要一个能把想法变成可运行产品的人,我很想聊聊。">If you're hiring for applied AI and want someone who turns ideas into running products, I'd love to talk.</p>
+      <div class="actions" style="justify-content:center">
+        <a href="mailto:ningtiaolovegood@gmail.com" class="btn btn-primary">✉ ningtiaolovegood@gmail.com</a>
+        <span class="btn btn-ghost copy" id="copyBtn" data-zh="⧉ 复制邮箱">⧉ Copy email</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <span>© <span id="yr"></span> <span data-zh="Hannah · 应用型 AI 工程师">Hannah · Applied AI Engineer</span></span>
+    <span data-zh="整个页面就是一个纯手写的单 HTML 文件——它本身也是个作品样本。">This whole page is one hand-built HTML file — consider it a work sample too.</span>
+  </div>
+</footer>
+
+<script>
+  // year
+  document.getElementById('yr').textContent = new Date().getFullYear();
+
+  // ---------- i18n (EN default, 中文 toggle, persisted) ----------
+  const I18N = (function(){
+    const nodes = Array.prototype.slice.call(document.querySelectorAll('[data-zh]'));
+    const en = new Map();
+    nodes.forEach(function(n){
+      en.set(n, n.hasAttribute('data-html') ? n.innerHTML : n.textContent);
+    });
+    const btn = document.getElementById('langToggle');
+    let lang = localStorage.getItem('lang') === 'zh' ? 'zh' : 'en';
+    function apply(l){
+      lang = l;
+      document.documentElement.lang = (l === 'zh') ? 'zh-CN' : 'en';
+      nodes.forEach(function(n){
+        const val = (l === 'zh') ? n.getAttribute('data-zh') : en.get(n);
+        if(n.hasAttribute('data-html')){ n.innerHTML = val; } else { n.textContent = val; }
+      });
+      btn.textContent = (l === 'zh') ? 'EN' : '中文';
+      localStorage.setItem('lang', l);
+    }
+    btn.addEventListener('click', function(){ apply(lang === 'zh' ? 'en' : 'zh'); });
+    apply(lang);
+    return { get lang(){ return lang; } };
+  })();
+
+  // copy email (keeps the right language label)
+  document.getElementById('copyBtn').addEventListener('click', function(){
+    const self = this;
+    navigator.clipboard.writeText('ningtiaolovegood@gmail.com').then(function(){
+      const zh = I18N.lang === 'zh';
+      self.textContent = zh ? '✓ 已复制' : '✓ Copied';
+      setTimeout(function(){ self.textContent = (I18N.lang === 'zh') ? '⧉ 复制邮箱' : '⧉ Copy email'; }, 1600);
+    });
+  });
+
+  // reveal on scroll
+  const io = new IntersectionObserver(function(es){
+    es.forEach(function(e){ if(e.isIntersecting){ e.target.classList.add('in'); io.unobserve(e.target); } });
+  }, { threshold:.12 });
+  document.querySelectorAll('.reveal').forEach(function(el){ io.observe(el); });
+</script>
+</body>
+</html>
