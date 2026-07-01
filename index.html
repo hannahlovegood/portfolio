@@ -191,63 +191,63 @@
         </div>
       </article>
 
-      <!-- Hermes -->
+      <!-- Info Radar — LIVE, real clickable links -->
       <article class="card reveal">
-        <span class="kicker" data-zh="智能体 AI · Python / FastAPI">Agentic AI · Python / FastAPI</span>
-        <h3 data-zh="Hermes — 股票投研智能体">Hermes — equity-research agent</h3>
-        <p data-zh="一个 LLM 智能体:拉取 A 股实时行情,用 Claude 推理,产出投研结论。FastAPI 后端 + akshare 数据层;我绕开了上游一个坏掉的代理,并加了磁盘缓存的代码表,让它又快又稳。">An LLM agent that pulls live A-share market data and reasons over it with Claude to produce investment research. FastAPI backend + akshare data layer; I engineered around a broken upstream proxy and added a disk-cached symbol table to keep it fast and reliable.</p>
+        <span class="kicker" data-zh="智能体 AI · 自动化 · 已上线">Agentic AI · Automation · Live</span>
+        <h3 data-zh="信息雷达 mini — 每天自动筛出 5 条值得读的">Info Radar — auto-curates the 5 things worth reading each day</h3>
+        <p data-zh="agents-radar 核心的轻量复刻:抓取 → 去重 → 源内归一化打分 → 每天给你 Top 5,每条都配一句为什么值得读。4 个源零密钥(Hacker News / Dev.to / Lobste.rs / GitHub Trending),可选接 LLM 生成理由、失败自动降级为启发式。GitHub Actions 每天定时自更新,无需服务器。">A lightweight rebuild of agents-radar's core: fetch → dedupe → per-source normalized scoring → a daily Top 5, each with a one-line reason it's worth your time. Four zero-key sources (Hacker News / Dev.to / Lobste.rs / GitHub Trending), optional LLM-generated reasons that gracefully fall back to heuristics, and a GitHub Actions cron that refreshes it daily — no server.</p>
         <div class="chips">
-          <span class="chip">Python</span><span class="chip">FastAPI</span>
-          <span class="chip">Claude API</span><span class="chip" data-zh="工具调用 / 智能体">Tool-use / agent</span><span class="chip">akshare</span>
+          <span class="chip">Node.js</span><span class="chip" data-zh="LLM 打分">LLM scoring</span>
+          <span class="chip">GitHub Actions</span><span class="chip" data-zh="零密钥">Zero-key</span><span class="chip" data-zh="已上线 ↗">Live ↗</span>
         </div>
         <div class="links">
-          <a class="pill pill-todo" href="#" target="_blank" data-zh="▶ 在线 Demo">▶ Live demo</a>
-          <a class="pill pill-todo" href="#" target="_blank" data-zh="📹 录屏讲解">📹 Walkthrough</a>
+          <a class="pill pill-go" href="https://hannahlovegood.github.io/info-radar/" target="_blank" rel="noopener" data-zh="▶ 在线 Demo">▶ Live demo</a>
+          <a class="pill pill-go" href="https://github.com/hannahlovegood/info-radar" target="_blank" rel="noopener" data-zh="⌥ 代码">⌥ Code</a>
         </div>
       </article>
 
-      <!-- HookForge -->
+      <!-- Portfolio Universe — LIVE, real clickable links -->
       <article class="card reveal">
-        <span class="kicker" data-zh="AI 工具 · 商业化">AI tooling · Go-to-market</span>
-        <h3 data-zh="HookForge — AI 短剧出海工具">HookForge — AI short-drama toolkit</h3>
-        <p data-zh="为爆火的 AI 短剧出海&quot;卖铲子&quot;的工具——帮创作者把短剧本地化、做成面向海外市场的成片。我选定的首个盈利项目:先用 service-first 验证,再做成软件。">"Sell shovels" tooling for the booming AI short-drama (短剧) export wave — helping creators localize and produce dramas for overseas markets. My chosen first revenue project: validated service-first before turning it into software.</p>
+        <span class="kicker" data-zh="3D / WebGL · 单文件 Web · 已上线">3D / WebGL · Single-file web · Live</span>
+        <h3 data-zh="作品小宇宙 — 可以走进去的 3D 作品集">Portfolio Universe — a 3D portfolio you walk through</h3>
+        <p data-zh="站在房间正中,用 WASD / 方向键走动、拖拽环顾四周、点击物件弹出项目卡——6 个物件各映射一个真实项目。纯手写 Three.js:场景搭建、第一人称控制、射线点击拾取全都自己实现,无构建工具、无 Key、可完全离线。面对&quot;该部署什么&quot;时,我选择做自己的版本,而不是复刻别人的站。">Stand in the middle of a room and move with WASD / arrow keys, drag to look around, and click objects to pop open project cards — six objects, each mapping to a real project. Hand-written Three.js: scene, first-person controls, and raycast picking all built from scratch, with no build step, no key, fully offline. Faced with "what should I deploy," I chose to build my own version rather than clone someone else's site.</p>
         <div class="chips">
-          <span class="chip" data-zh="LLM 流水线">LLM pipeline</span><span class="chip" data-zh="内容生成">Content gen</span>
-          <span class="chip" data-zh="产品">Product</span><span class="chip" data-zh="出海 / 本地化">出海 / localization</span>
+          <span class="chip">Three.js</span><span class="chip">WebGL</span>
+          <span class="chip" data-zh="第一人称控制">First-person</span><span class="chip" data-zh="零依赖">Zero-dependency</span><span class="chip" data-zh="已上线 ↗">Live ↗</span>
         </div>
         <div class="links">
-          <a class="pill pill-todo" href="#" target="_blank" data-zh="▶ 在线 Demo">▶ Live demo</a>
-          <a class="pill pill-todo" href="#" target="_blank" data-zh="📄 案例">📄 Case study</a>
+          <a class="pill pill-go" href="https://hannahlovegood.github.io/portfolio-universe/" target="_blank" rel="noopener" data-zh="▶ 在线 Demo">▶ Live demo</a>
+          <a class="pill pill-go" href="https://github.com/hannahlovegood/portfolio-universe" target="_blank" rel="noopener" data-zh="⌥ 代码">⌥ Code</a>
         </div>
       </article>
 
-      <!-- Synora -->
+      <!-- Mingding Echoes — LIVE, real clickable links -->
       <article class="card reveal">
-        <span class="kicker" data-zh="AI 产品设计 · Web">AI product design · Web</span>
-        <h3 data-zh="Synora — 神经多元人群社交应用">Synora — social app for neurodivergent people</h3>
-        <p data-zh="一款围绕神经多元需求设计的社交平台:每日&quot;今日遇见&quot;匹配、内嵌 AI 教练(萤),以及三层信任准入。端到端的产品 + UX,已做成可交互原型上线。">A social platform designed around neurodivergent needs: a daily "今日遇见" match, an embedded AI coach (萤), and a three-tier trust onboarding. End-to-end product + UX, shipped as a working interactive prototype.</p>
+        <span class="kicker" data-zh="交互叙事 · 单文件 Web · 已上线">Interactive game · Single-file web · Live</span>
+        <h3 data-zh="命定回响 — 哲学箴言 × 招魂仪式恐怖">Mingding Echoes — philosophy meets séance horror</h3>
+        <p data-zh="围绕&quot;命定&quot;主题点击八大谱系思想家的真实箴言把它们&quot;铭刻&quot;下来,而在间隙,鬼面、低语与凝视会毫无预兆地冒出来。91 条真实哲学箴言 · 12 个主题,配 WebAudio 实时合成的氛围音效,单文件、离线、零依赖。把严肃阅读和原始恐怖拧在一起的一次实验。">Click and "inscribe" real aphorisms from thinkers across eight lineages, gathered around the theme of fate — and in the gaps, faces, whispers, and stares surface without warning. 91 real philosophical aphorisms across 12 themes, with ambience synthesized live via WebAudio, all in one offline, zero-dependency file. An experiment in twisting serious reading together with primal horror.</p>
         <div class="chips">
-          <span class="chip" data-zh="产品 / UX">Product / UX</span><span class="chip" data-zh="AI 教练">AI coach</span>
-          <span class="chip" data-zh="原型">Prototype</span><span class="chip">HTML / JS</span>
+          <span class="chip">HTML / CSS / JS</span><span class="chip">WebAudio</span>
+          <span class="chip" data-zh="游戏设计">Game design</span><span class="chip" data-zh="零依赖">Zero-dependency</span><span class="chip" data-zh="已上线 ↗">Live ↗</span>
         </div>
         <div class="links">
-          <a class="pill pill-todo" href="#" target="_blank" data-zh="▶ 在线 Demo">▶ Live demo</a>
-          <a class="pill pill-todo" href="#" target="_blank" data-zh="📄 说明">📄 Write-up</a>
+          <a class="pill pill-go" href="https://hannahlovegood.github.io/mingding-echoes/" target="_blank" rel="noopener" data-zh="▶ 在线 Demo">▶ Live demo</a>
+          <a class="pill pill-go" href="https://github.com/hannahlovegood/mingding-echoes" target="_blank" rel="noopener" data-zh="⌥ 代码">⌥ Code</a>
         </div>
       </article>
 
-      <!-- Curio -->
+      <!-- COIN RUSH — LIVE, real clickable links -->
       <article class="card reveal">
-        <span class="kicker" data-zh="全栈 SaaS · TypeScript">Full-stack SaaS · TypeScript</span>
-        <h3 data-zh="Curio — 酒店点评 SaaS">Curio — hotel-review SaaS</h3>
-        <p data-zh="基于现代 TypeScript 技术栈构建的全栈 SaaS——认证、支付、多租户底座,该有的&quot;无聊但必要&quot;的地基全都有。证明我能把一个产品从想法做到真正可部署的应用。">A full-stack SaaS built on a modern TypeScript stack — auth, payments, multi-tenant plumbing, the whole boring-but-necessary foundation. Proof I can take a product from idea to a real, deployable application.</p>
+        <span class="kicker" data-zh="街机游戏 · KAPLAY · 已上线">Arcade game · KAPLAY · Live</span>
+        <h3 data-zh="黄金 60 秒 · COIN RUSH — 街机风 60 秒挑战">COIN RUSH — a 60-second arcade run</h3>
+        <p data-zh="接金币加分、躲炸弹掉命、连击拉倍率,难度随时间递增,60 秒后结算,BEST 分数本地持久化。基于 KAPLAY 游戏库(已本地化、离线可跑、零运行时依赖、无 Key),双击 index.html 即玩。用 headless Chrome 真机跑通了完整流程:计分、连击、三弹 GAME OVER、重开回到全新一局、移动端无溢出。">Catch coins for points, dodge bombs for lives, chain combos for a multiplier, with difficulty ramping over time, a scoreboard at 60 seconds, and a BEST score persisted locally. Built on the KAPLAY game library (vendored, offline-capable, zero runtime deps, no key) — double-click index.html and play. I verified the full loop in headless Chrome: scoring, combos, three-bomb GAME OVER, restart into a fresh run, and no overflow on mobile.</p>
         <div class="chips">
-          <span class="chip">Next.js</span><span class="chip">TypeScript</span>
-          <span class="chip">SaaS</span><span class="chip" data-zh="认证 / 计费">Auth / billing</span>
+          <span class="chip">KAPLAY</span><span class="chip" data-zh="游戏循环">Game loop</span>
+          <span class="chip">Canvas</span><span class="chip" data-zh="离线">Offline</span><span class="chip" data-zh="已上线 ↗">Live ↗</span>
         </div>
         <div class="links">
-          <a class="pill pill-todo" href="#" target="_blank" data-zh="▶ 在线 Demo">▶ Live demo</a>
-          <a class="pill pill-todo" href="#" target="_blank" data-zh="⌥ 代码">⌥ Code</a>
+          <a class="pill pill-go" href="https://hannahlovegood.github.io/coin-rush/" target="_blank" rel="noopener" data-zh="▶ 在线 Demo">▶ Live demo</a>
+          <a class="pill pill-go" href="https://github.com/hannahlovegood/coin-rush" target="_blank" rel="noopener" data-zh="⌥ 代码">⌥ Code</a>
         </div>
       </article>
 
