@@ -439,6 +439,20 @@
         </div>
       </article>
 
+      <!-- Flowise RAG Local — public repo, real clickable links -->
+      <article class="card reveal">
+        <span class="kicker" data-zh="自托管 · RAG · 全本地零密钥">Self-hosted · RAG · Fully local, zero-key</span>
+        <h3 data-zh="RAG-云溪镇 — 在 Flowise 画布上搭一条完全本地的 RAG 链">RAG Yunxi — a fully local RAG chain on the Flowise canvas</h3>
+        <p data-zh="先体检 Flowise 的三条安装路径:源码构建对跑 demo 是绕路;官方首推的 npx 路线在 Node 24 上必死——依赖树锁了不兼容的 better-sqlite3,npm 只刷警告然后静默退出,真错藏在 debug 日志里;最终用官方 Docker 镜像零编译跑通。然后在画布上搭出完整 RAG 链:文档切块 → 本地嵌入(nomic-embed-text,借 Ollama 的 OpenAI 兼容端点直连现成节点,省一次改造)→ Faiss 向量库 → 本地 hermes3 生成,全程零 API Key、零外部请求。验收方式是这个项目最讲究的部分:在测试文档里埋一个训练数据里不可能存在的事实(借书暗号「青苔与信」),模型答对只能是因为检索真的工作了——用公开知识验收 RAG 是自欺。">I first audited Flowise's three install paths: building from source is a detour for a demo; the officially recommended npx route is dead on Node 24 — the dependency tree pins an incompatible better-sqlite3, and npm exits silently behind a wall of warnings with the real error buried in debug logs; the official Docker image ran clean with zero compilation. Then I assembled the full RAG chain on the canvas: document chunking → local embeddings (nomic-embed-text, wired through Ollama's OpenAI-compatible endpoint so the stock node works unmodified) → a Faiss vector store → local hermes3 generation — zero API keys, zero external requests. The acceptance test is the part I care most about: I planted a fact that cannot exist in any training data (a library passphrase, "moss and letters"), so a correct answer can only mean retrieval actually worked — validating RAG with public knowledge is self-deception.</p>
+        <div class="chips">
+          <span class="chip">Flowise</span><span class="chip">RAG</span>
+          <span class="chip">Ollama</span><span class="chip">Docker</span><span class="chip" data-zh="公开仓库 ↗">Public repo ↗</span>
+        </div>
+        <div class="links">
+          <a class="pill pill-go" href="https://github.com/hannahlovegood/flowise-rag-local" target="_blank" rel="noopener" data-zh="⌥ 代码 + 一键导入流程">⌥ Code + importable chatflow</a>
+        </div>
+      </article>
+
       <!-- Viral Video Studio — live demo + public repo -->
       <article class="card reveal">
         <span class="kicker" data-zh="内容工具 · 单文件 Web · 已上线">Content tool · Single-file web · Live</span>
