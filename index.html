@@ -336,6 +336,21 @@
         </div>
       </article>
 
+      <!-- Dodge the Creeps (Godot web export) — LIVE, real clickable links -->
+      <article class="card reveal">
+        <span class="kicker" data-zh="游戏 · Godot 4 → WebAssembly · 已上线">Game · Godot 4 → WebAssembly · Live</span>
+        <h3 data-zh="躲避小怪 — Godot 官方教程游戏补全胜负循环，命令行直出网页版">Dodge the Creeps — Godot's tutorial game, completed and shipped to the web from the CLI</h3>
+        <p data-zh="把 Godot 官方教程游戏(原版只能无尽刷分)补全成完整胜负循环:撑到 15 分获胜、被撞即败,全程无头命令行导入导出,没开过一次编辑器界面。三处工程决策:官方导出模板包 1.28GB,用 HTTP Range 解析 zip 中央目录只抽取 20MB 的 Web 模板;导出关闭线程支持,绕开 SharedArrayBuffer 的跨域隔离头要求,GitHub Pages 直接能跑;给 GDScript 加 3 行 JavaScriptBridge 状态桥,让 canvas 游戏可被自动化验收——配套的 Playwright 像素避障 bot(势场 + 近身垂直侧闪)真实通关了这局游戏,不是模拟断言。">Took Godot's official tutorial game (originally endless scoring only) and completed the loop: survive to 15 points to win, one hit to lose — imported and exported entirely from the headless CLI without opening the editor once. Three engineering calls: the official export template bundle is 1.28GB, so a script parses the zip central directory over HTTP Range and pulls just the 20MB web templates; the export disables thread support to sidestep SharedArrayBuffer's cross-origin isolation headers, so it runs on GitHub Pages as-is; and a 3-line JavaScriptBridge state hook makes the canvas game automatable — the accompanying Playwright dodging bot (potential fields + close-range perpendicular sidesteps) genuinely beat the game during acceptance, no mocked assertions.</p>
+        <div class="chips">
+          <span class="chip">Godot 4.7 · GDScript</span><span class="chip">WebAssembly</span>
+          <span class="chip" data-zh="无头 CLI 导出">Headless CLI export</span><span class="chip" data-zh="自动化通关验收">Bot-verified playthrough</span><span class="chip" data-zh="已上线 ↗">Live ↗</span>
+        </div>
+        <div class="links">
+          <a class="pill pill-go" href="https://hannahlovegood.github.io/dodge-creeps/" target="_blank" rel="noopener" data-zh="▶ 在线 Demo">▶ Live demo</a>
+          <a class="pill pill-go" href="https://github.com/hannahlovegood/dodge-creeps" target="_blank" rel="noopener" data-zh="⌥ 代码">⌥ Code</a>
+        </div>
+      </article>
+
       <!-- Sketchy UI Kit — LIVE, real clickable links -->
       <article class="card reveal">
         <span class="kicker" data-zh="UI 组件参考 · 单文件 Web · 已上线">UI component reference · Single-file web · Live</span>
