@@ -77,20 +77,17 @@
   .grid{display:grid; grid-template-columns:1fr 1fr; gap:22px}
   @media(max-width:760px){ .grid{grid-template-columns:1fr} }
   .card{background:var(--card); border:1px solid var(--line); border-radius:var(--radius);
-    padding:28px; box-shadow:var(--shadow); transition:transform .18s, box-shadow .22s; display:flex; flex-direction:column}
+    padding:28px; box-shadow:var(--shadow); transition:transform .18s, box-shadow .22s; display:flex; flex-direction:column; min-width:0}
   .card:hover{transform:translateY(-4px); box-shadow:0 4px 8px rgba(33,29,24,.05),0 22px 48px rgba(33,29,24,.10)}
   .card .kicker{font-size:12.5px; color:var(--accent); font-weight:600; letter-spacing:.04em; text-transform:uppercase}
   .card h3{font-size:23px; margin:10px 0 0}
-  .card p{color:var(--muted); font-size:15px; margin-top:10px}
+  .card p{color:var(--muted); font-size:15px; margin-top:10px; overflow-wrap:anywhere}
   .chips{display:flex; flex-wrap:wrap; gap:8px; margin-top:18px}
   .chip{font-size:12.5px; color:var(--ink); background:var(--accent-soft); padding:5px 11px; border-radius:8px}
   .card .links{display:flex; gap:10px; margin-top:auto; padding-top:20px}
   .pill{font-size:13.5px; font-weight:500; padding:8px 14px; border-radius:10px; display:inline-flex; align-items:center; gap:6px; transition:background .2s,border-color .2s}
   .pill-go{background:var(--ink); color:var(--bg)}
   .pill-go:hover{background:#000}
-  /* dashed pill = you still need to fill this link in */
-  .pill-todo{background:transparent; border:1.5px dashed var(--accent); color:var(--accent)}
-  .pill-todo:hover{background:var(--accent-soft)}
 
   /* also built */
   .mini{display:grid; grid-template-columns:repeat(3,1fr); gap:16px}
@@ -134,7 +131,6 @@
       <a href="#about" data-zh="关于">About</a>
       <a href="#contact" data-zh="联系">Contact</a>
       <button id="langToggle" class="lang-toggle" type="button">中文</button>
-      <!-- TODO: 换成你的 GitHub 用户名链接 -->
       <a href="https://github.com/hannahlovegood" class="cta" target="_blank" rel="noopener">GitHub ↗</a>
     </div>
   </div>
@@ -145,12 +141,11 @@
   <div class="blob b1"></div>
   <div class="blob b2"></div>
   <div class="wrap">
-    <span class="eyebrow"><span class="dot"></span> <span data-zh="正在找应用型 AI 岗位 · 远程 / 出海团队">Open to applied-AI roles · 远程 / 出海团队</span></span>
+    <span class="eyebrow"><span class="dot"></span> <span data-zh="正在找应用型 AI 岗位 · 远程 / 出海团队">Open to applied-AI roles · remote / global teams</span></span>
     <h1 data-html data-zh="我做 <span class=&quot;accent&quot;>AI 产品</span>——而且真的把它们发布出去。">I build <span class="accent">AI products</span> — and I actually ship them.</h1>
     <p class="lede" data-zh="应用型 AI 工程师 / 产品构建者。过去一年我独立发布了 10+ 个产品——从 agentic LLM 后端,到全栈 SaaS,再到真有人用的小工具。做真实的东西时,我跑得最快。">Applied AI engineer & product builder. Over the last year I've shipped 10+ products solo — from agentic LLM backends to full-stack SaaS to tools real people use. I move fastest when I'm making something real.</p>
     <div class="actions">
       <a href="#work" class="btn btn-primary" data-zh="看作品 ↓">See the work ↓</a>
-      <!-- TODO: 确认这是你常用邮箱 -->
       <a href="mailto:ningtiaolovegood@gmail.com" class="btn btn-ghost" data-zh="✉ 联系我">✉ Get in touch</a>
     </div>
   </div>
@@ -268,7 +263,7 @@
 
       <!-- 24-Hour Life Dial — LIVE, real clickable links -->
       <article class="card reveal">
-        <span class="kicker" data-zh="在线工具 · 单文件 Web · 已上线">Live tool · Single-file web</span>
+        <span class="kicker" data-zh="在线工具 · 单文件 Web · 已上线">Web tool · Single-file web · Live</span>
         <h3 data-zh="24 小时人生拨盘 — 拖拽规划你的一天">24-Hour Life Dial — drag to plan your day</h3>
         <p data-zh="在一条 24 小时线性时间轴上拖拽,把一天刷成睡眠 / 工作 / 娱乐 / 学习,并自动生成当日复盘——一个会提示睡眠不足、过劳与失衡的启发式引擎。单文件、离线、零依赖。我逆向了 Linear Clock Lab 的核心,再亲手补上它从未有过的拖拽分配与复盘。打开即玩。">Drag across a linear 24-hour timeline to paint your day into sleep / work / play / study, and it auto-writes a daily review — a heuristic engine that flags short sleep, overwork, and imbalance. Single-file, offline, zero dependencies. I reverse-engineered the core of Linear Clock Lab, then built the drag-allocation and review it never had. Open it and play.</p>
         <div class="chips">
@@ -283,7 +278,7 @@
 
       <!-- E-Ink Calendar — LIVE, real clickable links -->
       <article class="card reveal">
-        <span class="kicker" data-zh="在线工具 · 单文件 Web · 已上线">Live tool · Single-file web</span>
+        <span class="kicker" data-zh="在线工具 · 单文件 Web · 已上线">Web tool · Single-file web · Live</span>
         <h3 data-zh="墨水屏日历牌 — 浏览器里的电子墨水日历">E-Ink Calendar — an e-paper desk display in your browser</h3>
         <p data-zh="一块 ESP32 + LilyGo 电子墨水屏日历牌的浏览器模拟器:大日期、迷你月历、今日待办、实时天气(Open-Meteo,免 Key),每 30 分钟刷新并在夜间自动进入低功耗——连电子墨水的&quot;黑闪&quot;刷新都还原了。原项目要 $70 硬件加一台常开的 Home Assistant 才能看到画面;我把它的核心体验抽出来搬进单文件、零后端的网页,买板子前先所见即所得。">A browser simulator of an ESP32 + LilyGo e-paper calendar display: a big date, a mini month grid, today's to-dos, and live weather (Open-Meteo, no key), refreshing every 30 minutes and dropping into low-power mode at night — down to the e-ink "black flash" repaint. The original needs $70 of hardware and an always-on Home Assistant to render anything; I distilled its core experience into one zero-backend file you can see before buying the board.</p>
         <div class="chips">
@@ -334,12 +329,12 @@
     <div class="sec-head reveal"><span class="idx" data-zh="02 — 广度">02 — Range</span></div>
     <div class="sec-head reveal"><h2 data-zh="还有很多——因为我就是喜欢做东西。">And a lot more, because I like making things.</h2></div>
     <div class="mini">
-      <a class="item reveal" href="#"><div class="t" data-zh="全球黑客松地图 →">Hackathon Atlas →</div><div class="d" data-zh="世界黑客松地图——Leaflet、聚合、多维筛选。">Global hackathon map — Leaflet, clustering, multi-filter.</div></a>
-      <a class="item reveal" href="#"><div class="t" data-zh="桌宠小黑猫 →">desktop-cat 小黑猫 →</div><div class="d" data-zh="macOS 上的 Electron 桌面宠物伴侣。">An Electron desktop-pet companion for macOS.</div></a>
-      <a class="item reveal" href="#"><div class="t" data-zh="拉威尔打字钢琴 →">Ravel Typewriter →</div><div class="d" data-zh="打字即奏拉威尔——单文件音乐小玩具。">Type and it plays Ravel — a single-file musical toy.</div></a>
-      <a class="item reveal" href="#"><div class="t" data-zh="人生方向罗盘 →">人生方向罗盘 →</div><div class="d" data-zh="离线决策罗盘,给出温柔的结构化建议。">An offline decision compass with gentle structured advice.</div></a>
-      <a class="item reveal" href="#"><div class="t" data-zh="AuDHD 叙事游戏 →">AuDHD narrative game →</div><div class="d" data-zh="社会模型视角、写实的成长选择故事。">A social-model, realistic coming-of-age choice story.</div></a>
-      <a class="item reveal" href="#"><div class="t" data-zh="Minotoys →">Minotoys →</div><div class="d" data-zh="AI 视频教育毛绒玩具概念(团队项目)。">AI-video educational plush concept (team project).</div></a>
+      <div class="item reveal"><div class="t" data-zh="全球黑客松地图">Hackathon Atlas</div><div class="d" data-zh="世界黑客松地图——Leaflet、聚合、多维筛选。">Global hackathon map — Leaflet, clustering, multi-filter.</div></div>
+      <div class="item reveal"><div class="t" data-zh="桌宠小黑猫">desktop-cat</div><div class="d" data-zh="macOS 上的 Electron 桌面宠物伴侣。">An Electron desktop-pet companion for macOS.</div></div>
+      <div class="item reveal"><div class="t" data-zh="拉威尔打字钢琴">Ravel Typewriter</div><div class="d" data-zh="打字即奏拉威尔——单文件音乐小玩具。">Type and it plays Ravel — a single-file musical toy.</div></div>
+      <div class="item reveal"><div class="t" data-zh="人生方向罗盘">Life Compass</div><div class="d" data-zh="离线决策罗盘,给出温柔的结构化建议。">An offline decision compass with gentle structured advice.</div></div>
+      <div class="item reveal"><div class="t" data-zh="AuDHD 叙事游戏">AuDHD narrative game</div><div class="d" data-zh="社会模型视角、写实的成长选择故事。">A social-model, realistic coming-of-age choice story.</div></div>
+      <div class="item reveal"><div class="t" data-zh="Minotoys">Minotoys</div><div class="d" data-zh="AI 视频教育毛绒玩具概念(团队项目)。">AI-video educational plush concept (team project).</div></div>
     </div>
   </div>
 </section>
