@@ -453,6 +453,20 @@
         </div>
       </article>
 
+      <!-- RAGFlow Local Lab — public repo, real clickable links -->
+      <article class="card reveal">
+        <span class="kicker" data-zh="自托管 · 深度 RAG · 引用溯源">Self-hosted · Deep RAG · Cited answers</span>
+        <h3 data-zh="RAGFlow 本地实验室 — 把重型 RAG 引擎在一台 Mac 上零密钥跑通">RAGFlow Local Lab — a heavyweight RAG engine running on one Mac with zero API keys</h3>
+        <p data-zh="RAGFlow 是五容器的重型引擎(Elasticsearch/MySQL/Redis/MinIO + 主服务),官方镜像只有 x86——我在 Apple Silicon 上让依赖走原生 ARM、主容器走 Rosetta 跑通,对话与嵌入全接本机 Ollama(hermes3 + bge-m3),零 API Key、零外部请求。语料是我自己:一个脚本把 vault 笔记批量转成 20 份 PDF,问答的内容就是「我自己的项目库」。从注册、RSA 密码加密、接模型到建库、解析、建助手,全程 API 自动化,一行 UI 不点;验收专挑难的:同一会话三轮追问,第二问只用一个「它」字指代上一轮主题,引用能回跳到原文块。仓库里如实记了 7 个坑,最狠的一个:Docker Desktop 虚拟机默认只分 8GB 内存,Elasticsearch 起动即被 OOM 杀,报错却只有一行 exit 137。">RAGFlow is a heavyweight five-container engine (Elasticsearch/MySQL/Redis/MinIO + core), and the official image is x86-only — I got it running on Apple Silicon with dependencies on native ARM and the core under Rosetta, wiring both chat and embeddings to local Ollama (hermes3 + bge-m3): zero API keys, zero external requests. The corpus is myself: a script batch-converts my vault notes into 20 PDFs, so the Q&A runs against my own project library. Everything from signup, RSA password encryption and model wiring to dataset creation, parsing and assistant setup is automated over the API — not one UI click; and the acceptance test picks the hard cases: three follow-ups in one session, where the second question refers to the previous topic with a single pronoun, and every citation jumps back to the source chunk. The repo honestly documents 7 pitfalls — the nastiest: Docker Desktop's VM defaults to 8GB, so Elasticsearch gets OOM-killed at startup with nothing but "exit 137" to go on.</p>
+        <div class="chips">
+          <span class="chip">RAGFlow</span><span class="chip">RAG</span>
+          <span class="chip">Ollama</span><span class="chip">Docker</span><span class="chip" data-zh="公开仓库 ↗">Public repo ↗</span>
+        </div>
+        <div class="links">
+          <a class="pill pill-go" href="https://github.com/hannahlovegood/ragflow-local-lab" target="_blank" rel="noopener" data-zh="⌥ 代码 + 复现脚本 + 排坑表">⌥ Code + reproduction scripts + pitfalls</a>
+        </div>
+      </article>
+
       <!-- Viral Video Studio — live demo + public repo -->
       <article class="card reveal">
         <span class="kicker" data-zh="内容工具 · 单文件 Web · 已上线">Content tool · Single-file web · Live</span>
