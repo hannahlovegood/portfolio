@@ -281,6 +281,20 @@
         </div>
       </article>
 
+      <!-- SearXNG Deploy — public repo, real clickable links -->
+      <article class="card reveal">
+        <span class="kicker" data-zh="自托管 · Docker · 排错实录">Self-hosted · Docker · Debug write-up</span>
+        <h3 data-zh="SearXNG 私人搜索 — 部署是简单的,网络才是真的">SearXNG private search — deploying is easy, the network is the real boss</h3>
+        <p data-zh="用官方镜像本地部署元搜索引擎 SearXNG,把一次查询同时发给多个引擎聚合、不被追踪。部署本身只要一份配置,但真正的工程在网络层:容器出站要绕回宿主机代理,而各家引擎对代理出口 IP 的反爬态度完全不同——Google 给 JS 墙、DuckDuckGo 弹验证码、Brave 限流。我把 11 个候选引擎逐个实测,选出 5 个真能出结果的编制,并把整个排错过程写成了公开实录。">A local deployment of the SearXNG metasearch engine from the official image — one query fans out to multiple engines, aggregated, untracked. The deploy itself is one config file; the real engineering is the network layer: container egress had to route back through the host proxy, and every engine treats a shared proxy exit IP differently — Google throws a JS wall, DuckDuckGo a CAPTCHA, Brave rate-limits. I benchmarked 11 candidate engines one by one, picked the 5 that actually return results, and published the whole debugging story.</p>
+        <div class="chips">
+          <span class="chip">Docker</span><span class="chip" data-zh="自托管">Self-hosted</span>
+          <span class="chip" data-zh="网络排错">Network debugging</span><span class="chip">SearXNG</span><span class="chip" data-zh="公开仓库 ↗">Public repo ↗</span>
+        </div>
+        <div class="links">
+          <a class="pill pill-go" href="https://github.com/hannahlovegood/searxng-deploy" target="_blank" rel="noopener" data-zh="⌥ 代码 + 排错实录">⌥ Code + write-up</a>
+        </div>
+      </article>
+
     </div>
   </div>
 </section>
