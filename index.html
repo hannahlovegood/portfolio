@@ -310,6 +310,20 @@
         </div>
       </article>
 
+      <!-- Firecrawl Pipeline — public repo, real clickable links -->
+      <article class="card reveal">
+        <span class="kicker" data-zh="自托管 · Docker · 数据管道">Self-hosted · Docker · Data pipeline</span>
+        <h3 data-zh="Firecrawl 资料管道 — 14 万星的抓取引擎,补上它没有的最后一公里">Firecrawl pipeline — a 142k-star scraper, plus the last mile it doesn't ship</h3>
+        <p data-zh="自托管 14 万星的网页抓取引擎 Firecrawl(5 容器:API/Playwright/Redis/RabbitMQ/Postgres,用官方 arm64 预构建镜像跳过半小时编译)。但它只解决「URL → 干净 markdown」——我写了一个零依赖 Node 管道补齐整条链路:URL 列表进,两层去重(URL 规范化 + 正文指纹),本地 LLM 中文摘要(不在线自动降级为离线启发式,全程不崩),导出 Obsidian 可读的笔记与索引。真正的坑在网络层:本机代理的 fake-IP 模式让容器内所有域名都解析成内网地址,被 SSRF 防护整批拦下——定位到源码后一行环境变量修复。">Self-hosted Firecrawl, the 142k-star web scraping engine (5 containers: API/Playwright/Redis/RabbitMQ/Postgres, official arm64 prebuilt images to skip a half-hour build). But it only solves "URL → clean markdown" — so I wrote a zero-dependency Node pipeline for the rest of the chain: a URL list in, two-layer dedup (URL canonicalization + content fingerprint), local-LLM Chinese summaries (gracefully degrading to an offline heuristic when the LLM is down), exported as Obsidian-ready notes plus a digest index. The real trap was the network layer: my proxy's fake-IP mode made every domain resolve to a private address inside containers, so the SSRF guard blocked everything — traced it in the source, fixed with one env var.</p>
+        <div class="chips">
+          <span class="chip">Docker</span><span class="chip" data-zh="自托管">Self-hosted</span>
+          <span class="chip" data-zh="数据管道">Data pipeline</span><span class="chip">Firecrawl</span><span class="chip" data-zh="公开仓库 ↗">Public repo ↗</span>
+        </div>
+        <div class="links">
+          <a class="pill pill-go" href="https://github.com/hannahlovegood/firecrawl-pipeline" target="_blank" rel="noopener" data-zh="⌥ 代码 + 排坑表">⌥ Code + pitfall table</a>
+        </div>
+      </article>
+
     </div>
   </div>
 </section>
