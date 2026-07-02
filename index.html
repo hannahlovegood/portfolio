@@ -467,6 +467,20 @@
         </div>
       </article>
 
+      <!-- AFFiNE Topic Workspace — public repo, deploy kit + pitfalls -->
+      <article class="card reveal">
+        <span class="kicker" data-zh="自托管 · 双链知识库 · 白板">Self-hosted · Bi-directional links · Whiteboard</span>
+        <h3 data-zh="选题工作区 — 在自托管 AFFiNE 里让资料、任务、白板互相引用">Topic Workspace — materials, tasks and a whiteboard cross-referencing each other in self-hosted AFFiNE</h3>
+        <p data-zh="先体检:AFFiNE 是 7 万星的 Notion+Miro 开源混合体,源码构建要 Node 20 + Yarn 4 + Rust 工具链外加两个 NAPI 原生包——那是贡献者路线;官方 Docker compose 四容器开箱即用。跑通后搭「选题工作区」:资料页、任务区、无边界白板三页互相引用,每页的 Bi-Directional Links 面板自动点亮反向链接。真正的工程量在无头自动化验收:BlockSuite 编辑器对合成键盘充满陷阱——@ 引用弹窗是零尺寸容器、默选当前文档产生自链,重载会话里按 Enter 必触发 split text 索引越界,End 停在视觉行尾而非逻辑行尾。逐一定位后换稳定路径:把目标文档 URL 写进剪贴板直接粘贴,编辑器自动转成引用 chip;验收不信标题文本,逐个读 chip 的 pageId 核对指向——最终 console 零报错。排坑实录整仓开源。">First, the audit: AFFiNE is the 70k-star open-source Notion+Miro hybrid; building from source needs Node 20 + Yarn 4 + a Rust toolchain plus two NAPI native packages — that's the contributor path, while the official four-container Docker compose just works. On top of it I built a topic workspace: a materials doc, a task list and an infinite whiteboard all cross-referencing each other, with every page's Bi-Directional Links panel lighting up automatically. The real engineering was headless acceptance testing: the BlockSuite editor is full of traps for synthetic keyboards — the @-mention popover is a zero-size container that defaults to self-linking the current doc, pressing Enter in a reloaded session throws split-text index errors, and End stops at the visual line end, not the logical one. After isolating each failure I switched to a stable path: write the target doc's URL to the clipboard and paste — the editor converts it into a reference chip; verification then reads each chip's pageId instead of trusting title text — zero console errors in the final run. The full pitfall log is open-sourced.</p>
+        <div class="chips">
+          <span class="chip">AFFiNE</span><span class="chip">BlockSuite</span>
+          <span class="chip">Docker</span><span class="chip">Playwright</span><span class="chip" data-zh="公开仓库 ↗">Public repo ↗</span>
+        </div>
+        <div class="links">
+          <a class="pill pill-go" href="https://github.com/hannahlovegood/affine-topic-workspace" target="_blank" rel="noopener" data-zh="⌥ 代码 + 部署套件与排坑实录">⌥ Code + deploy kit &amp; pitfall log</a>
+        </div>
+      </article>
+
       <!-- Viral Video Studio — live demo + public repo -->
       <article class="card reveal">
         <span class="kicker" data-zh="内容工具 · 单文件 Web · 已上线">Content tool · Single-file web · Live</span>
