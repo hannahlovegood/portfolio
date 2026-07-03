@@ -5,6 +5,13 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 <title>Hannah · Applied AI Engineer</title>
 <meta name="description" content="Applied AI engineer & product builder. I ship agents, full-stack SaaS, and tools people actually use." />
+<meta name="theme-color" content="#FAF7F2" />
+<meta property="og:type" content="website" />
+<meta property="og:title" content="Hannah · Applied AI Engineer" />
+<meta property="og:description" content="Applied AI engineer & product builder. I ship agents, full-stack SaaS, and tools people actually use." />
+<meta property="og:url" content="https://hannahlovegood.github.io/portfolio/" />
+<meta name="twitter:card" content="summary" />
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' rx='22' fill='%23C2613B'/%3E%3Ctext x='50' y='70' font-family='Georgia,serif' font-size='58' font-weight='600' text-anchor='middle' fill='%23FAF7F2'%3EH%3C/text%3E%3C/svg%3E" />
 <link rel="preconnect" href="https://fonts.googleapis.com" />
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
 <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600;9..144,700&family=Inter:wght@400;500;600&family=Noto+Sans+SC:wght@400;500;600&display=swap" rel="stylesheet" />
@@ -24,6 +31,7 @@
   }
   h1,h2,h3{font-family:"Fraunces","Noto Sans SC",Georgia,serif; font-weight:600; line-height:1.1; letter-spacing:-.01em}
   a{color:inherit; text-decoration:none}
+  a:focus-visible,button:focus-visible{outline:2px solid var(--accent); outline-offset:2px; border-radius:4px}
   .wrap{max-width:1040px; margin:0 auto; padding:0 24px}
   .accent{color:var(--accent)}
 
@@ -55,9 +63,10 @@
   .hero .lede{font-size:clamp(17px,2.2vw,21px); color:var(--muted); margin-top:20px; max-width:54ch}
   .hero .actions{display:flex; flex-wrap:wrap; gap:14px; margin-top:34px}
   .btn{display:inline-flex; align-items:center; gap:8px; padding:13px 22px; border-radius:999px;
+    font:inherit; color:inherit; background:none; border:0; cursor:pointer;
     font-size:15px; font-weight:500; transition:transform .15s, box-shadow .2s, background .2s}
   .btn-primary{background:var(--accent); color:#fff; box-shadow:0 8px 22px rgba(194,97,59,.28)}
-  .btn-primary:hover{transform:translateY(-2px)}
+  .btn-primary:hover{transform:translateY(-2px); box-shadow:0 12px 32px rgba(194,97,59,.35)}
   .btn-ghost{background:var(--card); border:1px solid var(--line); box-shadow:var(--shadow)}
   .btn-ghost:hover{transform:translateY(-2px)}
 
@@ -118,6 +127,12 @@
   /* reveal */
   .reveal{opacity:0; transform:translateY(18px); transition:opacity .6s ease, transform .6s ease}
   .reveal.in{opacity:1; transform:none}
+
+  @media (prefers-reduced-motion: reduce){
+    html{scroll-behavior:auto}
+    .reveal{opacity:1; transform:none; transition:none}
+    .btn:hover,.card:hover{transform:none}
+  }
 </style>
 </head>
 <body>
@@ -559,7 +574,7 @@
       <p data-zh="如果你在招应用型 AI 的人,想要一个能把想法变成可运行产品的人,我很想聊聊。">If you're hiring for applied AI and want someone who turns ideas into running products, I'd love to talk.</p>
       <div class="actions" style="justify-content:center">
         <a href="mailto:ningtiaolovegood@gmail.com" class="btn btn-primary">✉ ningtiaolovegood@gmail.com</a>
-        <span class="btn btn-ghost copy" id="copyBtn" data-zh="⧉ 复制邮箱">⧉ Copy email</span>
+        <button type="button" class="btn btn-ghost copy" id="copyBtn" data-zh="⧉ 复制邮箱">⧉ Copy email</button>
       </div>
     </div>
   </div>
@@ -576,6 +591,12 @@
   // year
   document.getElementById('yr').textContent = new Date().getFullYear();
 
+  // storage can throw (blocked cookies / private mode) — never let it kill the page
+  const store = {
+    get: function(k){ try{ return localStorage.getItem(k); }catch(e){ return null; } },
+    set: function(k,v){ try{ localStorage.setItem(k,v); }catch(e){} }
+  };
+
   // ---------- i18n (EN default, 中文 toggle, persisted) ----------
   const I18N = (function(){
     const nodes = Array.prototype.slice.call(document.querySelectorAll('[data-zh]'));
@@ -584,7 +605,7 @@
       en.set(n, n.hasAttribute('data-html') ? n.innerHTML : n.textContent);
     });
     const btn = document.getElementById('langToggle');
-    let lang = localStorage.getItem('lang') === 'zh' ? 'zh' : 'en';
+    let lang = store.get('lang') === 'zh' ? 'zh' : 'en';
     function apply(l){
       lang = l;
       document.documentElement.lang = (l === 'zh') ? 'zh-CN' : 'en';
@@ -593,7 +614,7 @@
         if(n.hasAttribute('data-html')){ n.innerHTML = val; } else { n.textContent = val; }
       });
       btn.textContent = (l === 'zh') ? 'EN' : '中文';
-      localStorage.setItem('lang', l);
+      store.set('lang', l);
     }
     btn.addEventListener('click', function(){ apply(lang === 'zh' ? 'en' : 'zh'); });
     apply(lang);
@@ -603,11 +624,17 @@
   // copy email (keeps the right language label)
   document.getElementById('copyBtn').addEventListener('click', function(){
     const self = this;
-    navigator.clipboard.writeText('ningtiaolovegood@gmail.com').then(function(){
+    function flash(ok){
       const zh = I18N.lang === 'zh';
-      self.textContent = zh ? '✓ 已复制' : '✓ Copied';
+      self.textContent = ok ? (zh ? '✓ 已复制' : '✓ Copied') : (zh ? '✗ 请手动复制' : '✗ Copy manually');
       setTimeout(function(){ self.textContent = (I18N.lang === 'zh') ? '⧉ 复制邮箱' : '⧉ Copy email'; }, 1600);
-    });
+    }
+    if(navigator.clipboard && navigator.clipboard.writeText){
+      navigator.clipboard.writeText('ningtiaolovegood@gmail.com')
+        .then(function(){ flash(true); }, function(){ flash(false); });
+    } else {
+      flash(false);
+    }
   });
 
   // reveal on scroll
