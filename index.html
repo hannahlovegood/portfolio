@@ -468,6 +468,21 @@
         </div>
       </article>
 
+      <!-- x402 Pocket Agent — LIVE replay + public repo -->
+      <article class="card reveal">
+        <span class="kicker" data-zh="Agent 支付 · x402 协议 · 链上可验证">Agent payments · x402 protocol · Verifiable on-chain</span>
+        <h3 data-zh="口袋 Agent — 给 AI 一个钱包和预算，让它自己用 USDC 付款">Pocket Agent — give an AI a wallet and a budget, and let it pay in USDC by itself</h3>
+        <p data-zh="基于 x402 协议(Coinbase 发起,基金会成员含 Google/Visa/Anthropic)的机器对机器支付 demo:卖方是三个价格不同的付费 API,agent 收到任务后自己规划买什么,裸请求撞上 HTTP 402 报价单,用 viem 本地私钥做 EIP-3009 授权签名,facilitator 代付 gas 上链结算——agent 钱包只需 USDC,零 ETH。核心设计是预算护栏写在代码层而非 prompt 里:招牌演示中任务需要三样服务(合计 $0.016)而预算只有 $0.01,agent 买下两样便宜的、第三样被护栏如实拒绝,两笔 USDC 转账在 BaseScan 上可逐笔查证。在线版是静态托管自动切换的「真实运行回放」,不依赖任何在线后端。排坑如实入库:官方 README 里的 facilitator 新域名根本没上线,Node 内置 fetch 不读代理环境变量要用 undici 显式接管。">A machine-to-machine payments demo on the x402 protocol (started by Coinbase; foundation members include Google, Visa and Anthropic): the seller runs three paid APIs at different prices, and the agent plans its own purchases — a bare request hits an HTTP 402 price quote, the agent signs an EIP-3009 authorization with a local viem key, and the facilitator settles on-chain paying the gas, so the agent wallet holds only USDC, zero ETH. The core design decision: the budget guard lives in code, not in the prompt. In the flagship run the task needs three services ($0.016 total) on a $0.01 budget — the agent buys the two cheaper ones and the guard honestly refuses the third, with both USDC transfers verifiable transaction-by-transaction on BaseScan. The live version is a replay of a real run that auto-activates on static hosting, depending on no backend. Pitfalls logged honestly: the new facilitator domain in the official README doesn't exist yet, and Node's built-in fetch ignores proxy env vars — undici has to take over explicitly.</p>
+        <div class="chips">
+          <span class="chip">x402</span><span class="chip">USDC</span>
+          <span class="chip">viem</span><span class="chip" data-zh="预算护栏">Budget guard</span><span class="chip" data-zh="已上线 ↗">Live ↗</span>
+        </div>
+        <div class="links">
+          <a class="pill pill-go" href="https://hannahlovegood.github.io/x402-agent-demo/" target="_blank" rel="noopener" data-zh="▶ 真实运行回放">▶ Real-run replay</a>
+          <a class="pill pill-go" href="https://github.com/hannahlovegood/x402-agent-demo" target="_blank" rel="noopener" data-zh="⌥ 代码 + 排坑表">⌥ Code + pitfalls</a>
+        </div>
+      </article>
+
       <!-- RAGFlow Local Lab — public repo, real clickable links -->
       <article class="card reveal">
         <span class="kicker" data-zh="自托管 · 深度 RAG · 引用溯源">Self-hosted · Deep RAG · Cited answers</span>
