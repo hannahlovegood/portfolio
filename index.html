@@ -498,6 +498,36 @@
         </div>
       </article>
 
+      <!-- Tiyao Daily — LIVE, real clickable links -->
+      <article class="card reveal">
+        <span class="kicker" data-zh="自动出刊 · LLM 策展 · 零成本">Automated publishing · LLM curation · Zero cost</span>
+        <h3 data-zh="提要 — 每天 5 分钟的中文 AI 日报">Tiyao — a five-minute Chinese AI daily</h3>
+        <p data-zh="每天从 6 个信源抓取、去重、打分，只留最值得读的 10 条，每条配一句人话理由。GitHub Actions 每日自动出刊，网页、Markdown、RSS 三种形态同步更新；中文标题与理由由云端 LLM 生成，失败自动降级为启发式，永不断更。">Every day it crawls six sources, dedupes and scores the haul, and keeps only the ten items worth reading — each with a one-line, plain-language reason. GitHub Actions publishes daily to web, Markdown and RSS in lockstep; Chinese headlines and reasons come from a cloud LLM with a heuristic fallback, so an outage never stops the presses.</p>
+        <div class="chips">
+          <span class="chip">GitHub Actions</span><span class="chip">RSS</span>
+          <span class="chip" data-zh="LLM 策展">LLM curation</span><span class="chip" data-zh="已上线 ↗">Live ↗</span>
+        </div>
+        <div class="links">
+          <a class="pill pill-go" href="https://hannahlovegood.github.io/tiyao/" target="_blank" rel="noopener" data-zh="▶ 今日刊">▶ Today's issue</a>
+          <a class="pill pill-go" href="https://github.com/hannahlovegood/tiyao" target="_blank" rel="noopener" data-zh="⌥ 代码 + 生成器">⌥ Code + generator</a>
+        </div>
+      </article>
+
+      <!-- Tiyao Landing — LIVE, AI website-cloning pipeline showcase -->
+      <article class="card reveal">
+        <span class="kicker" data-zh="AI 逆向工程 · 多 agent 并行构建">AI reverse-engineering · Multi-agent build</span>
+        <h3 data-zh="提要订阅落地页 — 用 AI 克隆流水线逆向 tldr.tech，再换装成自己的品牌">Tiyao landing page — reverse-engineer tldr.tech with an AI pipeline, then rebrand it as your own</h3>
+        <p data-zh="复现 26K star 的 ai-website-cloner-template：Claude Code 充当工头——浏览器侦察、getComputedStyle 逐值提取、写组件规格书，再派 4 个 builder agent 在各自 git worktree 并行盖楼后合并。保真克隆整页高度与原站只差 12px，随后品牌、文案、配色整体换装成「提要」金色中文版，真实第 1 期日报内容上墙。坑也如实：目标站的 Vercel 安全检查点会拦 headless 浏览器，必须换有头系统 Chrome。">A reproduction of the 26k-star ai-website-cloner-template: Claude Code plays foreman — browser reconnaissance, value-by-value getComputedStyle extraction, written component specs — then dispatches four builder agents in parallel git worktrees and merges their work. The faithful clone lands within 12px of the original's full-page height; the brand, copy and palette are then swapped wholesale into Tiyao's golden Chinese edition, with real issue-one content on the wall. Pitfalls logged honestly: the target's Vercel security checkpoint blocks headless browsers, so a headed system Chrome has to step in.</p>
+        <div class="chips">
+          <span class="chip">Next.js</span><span class="chip">Tailwind v4</span>
+          <span class="chip" data-zh="多 agent">Multi-agent</span><span class="chip">worktree</span><span class="chip" data-zh="已上线 ↗">Live ↗</span>
+        </div>
+        <div class="links">
+          <a class="pill pill-go" href="https://hannahlovegood.github.io/tiyao-landing/" target="_blank" rel="noopener" data-zh="▶ 在线演示">▶ Live demo</a>
+          <a class="pill pill-go" href="https://github.com/hannahlovegood/tiyao-landing" target="_blank" rel="noopener" data-zh="⌥ 代码 + 构建说明">⌥ Code + build notes</a>
+        </div>
+      </article>
+
       <!-- RAGFlow Local Lab — public repo, real clickable links -->
       <article class="card reveal">
         <span class="kicker" data-zh="自托管 · 深度 RAG · 引用溯源">Self-hosted · Deep RAG · Cited answers</span>
@@ -553,6 +583,63 @@
         <div class="links">
           <a class="pill pill-go" href="https://hannahlovegood.github.io/molink/" target="_blank" rel="noopener" data-zh="▶ 在线 Demo">▶ Live demo</a>
           <a class="pill pill-go" href="https://github.com/hannahlovegood/molink" target="_blank" rel="noopener" data-zh="⌥ 代码">⌥ Code</a>
+        </div>
+      </article>
+
+      <!-- Hermes — public repo -->
+      <article class="card reveal">
+        <span class="kicker" data-zh="AI Agent · A 股投研">AI agent · A-share research</span>
+        <h3 data-zh="Hermes 投研助手 — 会自己查数据的 A 股研究 agent">Hermes — an A-share research agent that pulls its own data</h3>
+        <p data-zh="FastAPI + akshare + Claude 的 agentic 投研 MVP：输入一只股票，agent 自己决定调用哪些数据接口（行情、财务、资金流向），汇总成结构化研究简报；无 Key 时自动走 demo 模式。本机代理弄坏了部分 akshare 接口——绕行方案与名称表磁盘缓存已写进代码，排坑如实入库。">An agentic research MVP built on FastAPI, akshare and Claude: give it one ticker and the agent decides which data endpoints to call — quotes, financials, money flow — then assembles a structured research brief; with no API key it falls back to demo mode. A local proxy broke several akshare endpoints, so the workarounds and a name-table disk cache are written into the code, pitfalls logged honestly.</p>
+        <div class="chips">
+          <span class="chip">FastAPI</span><span class="chip">akshare</span>
+          <span class="chip">Claude API</span><span class="chip">Agent</span>
+        </div>
+        <div class="links">
+          <a class="pill pill-go" href="https://github.com/hannahlovegood/hermes" target="_blank" rel="noopener" data-zh="⌥ 代码 + 排坑表">⌥ Code + pitfalls</a>
+        </div>
+      </article>
+
+      <!-- Karakeep — public repo -->
+      <article class="card reveal">
+        <span class="kicker" data-zh="自托管 · 本地 AI 标签">Self-hosted · Local AI tagging</span>
+        <h3 data-zh="Karakeep 档案馆 — 收藏一切，本地 AI 自动打标签">Karakeep — hoard everything, tag it with local AI</h3>
+        <p data-zh="自托管「收藏一切」档案馆：Docker 三件套 + 本地 Ollama 免费中文标签，49/50 条链接自动抓正文 + 整页截图。最大的坑是代理 fake-IP 让容器全部触发 SSRF 防护、抓取 0/50——宿主机代理中转修复，完整实录随部署套件入库。">A self-hosted hoard-everything archive: a three-container Docker stack plus local Ollama for free Chinese tags, with 49 of 50 links auto-captured as full text and full-page screenshots. The biggest pit: proxy fake-IP resolution tripped SSRF protection in every container and crawling flatlined at 0/50 — fixed with a host-side proxy relay, with the full battle log shipped alongside the deploy kit.</p>
+        <div class="chips">
+          <span class="chip">Docker</span><span class="chip">Ollama</span>
+          <span class="chip" data-zh="自托管">Self-hosted</span>
+        </div>
+        <div class="links">
+          <a class="pill pill-go" href="https://github.com/hannahlovegood/karakeep-deploy" target="_blank" rel="noopener" data-zh="⌥ 部署套件 + 排坑实录">⌥ Deploy kit + battle log</a>
+        </div>
+      </article>
+
+      <!-- B-Side — LIVE, real clickable links -->
+      <article class="card reveal">
+        <span class="kicker" data-zh="AI × 音乐 · 情绪">AI × music · Emotions</span>
+        <h3 data-zh="B-Side 鲸落 — 听懂心情再挑歌的 AI 情绪 DJ">B-Side — an AI DJ that reads your mood before picking the song</h3>
+        <p data-zh="告诉「鲸落」你此刻的心情，它用通义千问（BYOK）理解情绪、挑一首贴合的歌，接 QQ 音乐 / 网易云播放，并把每一次感受存成一面情绪唱片墙。纯前端单文件，数据不出浏览器。">Tell "Whalefall" how you feel and it reads the mood with Qwen (bring your own key), picks a song that fits, plays it through QQ Music or NetEase, and files each feeling onto a wall of emotion records. Pure front-end, single file — your data never leaves the browser.</p>
+        <div class="chips">
+          <span class="chip">AI</span><span class="chip">BYOK</span>
+          <span class="chip" data-zh="音乐">Music</span><span class="chip" data-zh="已上线 ↗">Live ↗</span>
+        </div>
+        <div class="links">
+          <a class="pill pill-go" href="https://hannahlovegood.github.io/bside/" target="_blank" rel="noopener" data-zh="▶ 在线 Demo">▶ Live demo</a>
+          <a class="pill pill-go" href="https://github.com/hannahlovegood/bside" target="_blank" rel="noopener" data-zh="⌥ 代码">⌥ Code</a>
+        </div>
+      </article>
+
+      <!-- Synora — LIVE prototype on Vercel (code private) -->
+      <article class="card reveal">
+        <span class="kicker" data-zh="产品原型 · 神经多元友好">Product prototype · Neurodivergent-friendly</span>
+        <h3 data-zh="Synora — 神经多元人群的社交平台原型">Synora — a social platform prototype for neurodivergent people</h3>
+        <p data-zh="为神经多元人群设计的社交产品完整交互原型：「今日遇见」低压力匹配、「萤」AI 教练、三层渐进准入，状态本地持久化。创业申请项目，demo 部署于 Vercel，代码私有。">A complete interactive prototype of a social product designed for neurodivergent people: low-pressure "meet of the day" matching, "Firefly" the AI coach, and a three-tier progressive onboarding, with state persisted locally. A startup application project — demo on Vercel, code private.</p>
+        <div class="chips">
+          <span class="chip" data-zh="产品原型">Prototype</span><span class="chip" data-zh="神经多元">Neurodivergent</span>
+          <span class="chip">Vercel</span><span class="chip" data-zh="已上线 ↗">Live ↗</span>
+        </div>
+        <div class="links">
+          <a class="pill pill-go" href="https://synora-woad.vercel.app" target="_blank" rel="noopener" data-zh="▶ 在线原型">▶ Live prototype</a>
         </div>
       </article>
 
