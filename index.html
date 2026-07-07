@@ -513,6 +513,21 @@
         </div>
       </article>
 
+      <!-- Hackathon Atlas — LIVE map, 4-source aggregation, daily Actions -->
+      <article class="card reveal">
+        <span class="kicker" data-zh="数据聚合 · 地图可视化 · 每日自动更新">Data aggregation · Map visualisation · Daily auto-update</span>
+        <h3 data-zh="全球黑客松地图 — 四个数据源，一张实时世界地图">Hackathon Atlas — four data sources, one live world map</h3>
+        <p data-zh="把 Devpost 官方接口、MLH 页面内嵌 JSON、ETHGlobal 的 React 服务端数据流和 HackerEarth 插件接口聚合成一张暗色世界地图：零依赖 Node 抓取器负责归一化、去重和离线地理编码（约 300 城市坐标表 + 国家中心点兜底，零 API Key），页面按举办时间、大洲、国家、类别、持续时间、奖金池六个维度筛选，点卡片飞行到城市弹出报名入口。GitHub Actions 每天早上重抓数据，抓取器只写数据文件、不碰页面，改样式永远不会被定时任务覆盖。">It folds Devpost's official API, MLH's embedded JSON, ETHGlobal's React server-component stream and HackerEarth's extension endpoint into one dark world map: a zero-dependency Node fetcher normalises, dedupes and geocodes offline (a ~300-city coordinate table with country-centroid fallback, zero API keys), and the page filters by date, continent, country, category, duration and prize pool — click a card and the map flies to the city with a sign-up popup. GitHub Actions re-crawls every morning; the fetcher only writes the data file and never touches the page, so styling changes can't be clobbered by the cron job.</p>
+        <div class="chips">
+          <span class="chip">Leaflet</span><span class="chip">GitHub Actions</span>
+          <span class="chip" data-zh="四源聚合">4-source aggregation</span><span class="chip" data-zh="已上线 ↗">Live ↗</span>
+        </div>
+        <div class="links">
+          <a class="pill pill-go" href="https://hannahlovegood.github.io/hackathon-atlas/" target="_blank" rel="noopener" data-zh="▶ 在线地图">▶ Live map</a>
+          <a class="pill pill-go" href="https://github.com/hannahlovegood/hackathon-atlas" target="_blank" rel="noopener" data-zh="⌥ 代码 + 抓取器">⌥ Code + fetcher</a>
+        </div>
+      </article>
+
       <!-- Tiyao Landing — LIVE, AI website-cloning pipeline showcase -->
       <article class="card reveal">
         <span class="kicker" data-zh="AI 逆向工程 · 多 agent 并行构建">AI reverse-engineering · Multi-agent build</span>
