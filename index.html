@@ -186,6 +186,21 @@
 
     <div class="grid">
 
+      <!-- DST Lab — LIVE deterministic simulation testing lab -->
+      <article class="card reveal">
+        <span class="kicker" data-zh="分布式系统 · 测试基础设施 · 已上线">Distributed systems · Testing infrastructure · Live</span>
+        <h3 data-zh="DST Lab — 从零手写确定性模拟测试，看着钱凭空出现">DST Lab — deterministic simulation testing from scratch, watching money appear out of thin air</h3>
+        <p data-zh="FoundationDB / TigerBeetle 式确定性模拟测试(DST)的零依赖 Python 实现,走完完整闭环:造一个有真实 bug 的分布式转账协议 → 种子搜索撞出守恒违规 → 同种子逐字节重放 → delta-debugging 自动把「5 笔转账+13 个丢包」缩小成「1 笔转账+1 个丢包」的 1-minimal 最小复现 → 修复(幂等键/持久化意图日志+定时补跑) → 丢包率 0.3–0.8 逐档 3000 种子证明修复。引擎铁律:全系统不确定性单一来源,无真实时钟、无线程、无一处直接调用 random。最后用 4 个对抗审计 agent 反攻自己的结论,逼出三处过度断言并全部修正——修正记录原样留在 README 里。在线页是可播放的消息序列图,九步看懂一个分布式 bug。">A zero-dependency Python implementation of FoundationDB / TigerBeetle-style deterministic simulation testing, run through its full loop: build a distributed transfer protocol with a real bug → seed search finds a conservation violation → replay the same seed byte-for-byte → delta-debugging shrinks "5 transfers + 13 drops" to a 1-minimal "1 transfer + 1 drop" repro → fix it (idempotency keys, then a durable intent log with a periodic sweeper) → prove the fix across drop rates 0.3–0.8, 3000 seeds each. The engine's iron rule: one single source of nondeterminism — no wall clock, no threads, not one direct call to random. Then four adversarial audit agents attacked the project's own claims, forcing three overstatements to be corrected — the corrections kept verbatim in the README. The live page is a playable message-sequence chart: one distributed-systems bug understood in nine clicks.</p>
+        <div class="chips">
+          <span class="chip" data-zh="确定性模拟测试">Deterministic simulation</span><span class="chip" data-zh="分布式协议">Distributed protocols</span>
+          <span class="chip" data-zh="自动缩小复现">Auto-shrinking repros</span><span class="chip" data-zh="对抗审计">Adversarial audit</span><span class="chip" data-zh="已上线 ↗">Live ↗</span>
+        </div>
+        <div class="links">
+          <a class="pill pill-go" href="https://hannahlovegood.github.io/dst-lab/" target="_blank" rel="noopener" data-zh="▶ 可玩讲解">▶ Playable explainer</a>
+          <a class="pill pill-go" href="https://github.com/hannahlovegood/dst-lab" target="_blank" rel="noopener" data-zh="⌥ 代码 + 审计记录">⌥ Code + audit log</a>
+        </div>
+      </article>
+
       <!-- The Pilgrim's Way — LIVE interactive parable game -->
       <article class="card reveal">
         <span class="kicker" data-zh="互动叙事 · 寓言游戏 · 已上线">Interactive fiction · Parable game · Live</span>
